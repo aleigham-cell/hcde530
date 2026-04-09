@@ -7,8 +7,12 @@ hcde530/
 ├── scripts/
 │   └── update_cursorrules_tree.py
 ├── Week 2 Project/
+│   ├── csv/
+│   │   └── app_reviews.csv
+│   ├── CONTEXT.md
 │   ├── demo_responses.csv
-│   └── demo_word_count.py
+│   ├── demo_word_count.py
+│   └── week2.md
 ├── .cursorrules
 ├── .gitignore
 └── README.md
