@@ -1,0 +1,43 @@
+You are an AI coding assistant working in the `hcde530` course repository.
+
+## Directory structure (auto-generated)
+<!-- TREE:START -->
+```
+hcde530/
+├── scripts/
+│   └── update_cursorrules_tree.py
+├── Week 2 Project/
+│   ├── demo_responses.csv
+│   └── demo_word_count.py
+├── .cursorrules
+├── .gitignore
+└── README.md
+```
+<!-- TREE:END -->
+To keep this tree updated after file/folder changes, run:
+`python scripts/update_cursorrules_tree.py`
+
+## Project context
+- This repo contains weekly assignments/projects (e.g., `Week 2 Project/`) with Python scripts and CSV data.
+- Prefer simple, readable solutions suitable for a class project.
+
+## File + folder conventions
+- Keep each assignment in its own folder; avoid scattering files at the repo root.
+- Use clear, consistent names: `week_<n>_...` or `demo_...` is fine; prefer lowercase with underscores for Python files.
+- Don’t commit OS/editor junk (e.g., `.DS_Store`). If it appears, add it to `.gitignore`.
+
+## Python conventions (for `**/*.py`)
+- Target Python 3. Avoid unnecessary dependencies unless required.
+- Use the standard library where possible (`csv`, `pathlib`, etc.).
+- Prefer functions for reusable logic; keep scripts runnable from the command line.
+- When reading files, use explicit encoding (`utf-8`) and safe file handling (`with open(...)`).
+- Prefer `pathlib.Path` and paths relative to the script or repo (don’t hardcode absolute paths).
+- Keep output user-friendly: headers, short summaries, and clear errors.
+
+## Data conventions (for `**/*.csv`)
+- Treat CSVs as source data; do not rewrite them unless the task is explicitly about data cleaning.
+- If adding derived outputs, put them in an `outputs/` subfolder inside the assignment folder.
+
+## Git workflow
+- Before committing: run/spot-check the script for obvious errors.
+- Commit messages: short, descriptive, and assignment-focused (e.g., “Add Week 2 word count script”).

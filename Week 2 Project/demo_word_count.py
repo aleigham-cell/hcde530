@@ -27,6 +27,7 @@ print(f"{'ID':<6} {'Role':<22} {'Words':<6} {'Response (first 60 chars)'}")
 print("-" * 75)
 
 word_counts = []
+# loops through each csv row you loaded into responses and for each pull out three fields into variable
 
 for row in responses:
     participant = row["participant_id"]
@@ -37,7 +38,7 @@ for row in responses:
     count = count_words(response)
     word_counts.append(count)
 
-    # Truncate the response preview for display
+    # create a short preview of the response for display
     if len(response) > 60:
         preview = response[:60] + "..."
     else:
