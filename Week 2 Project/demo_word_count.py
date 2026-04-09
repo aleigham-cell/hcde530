@@ -1,3 +1,5 @@
+# a script to process and count wrods in a csv file
+
 import csv
 
 
