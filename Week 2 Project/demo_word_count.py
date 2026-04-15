@@ -12,7 +12,7 @@ with open(filename, newline="", encoding="utf-8") as f:
     for row in reader:
         responses.append(row)
 
-
+#function to count words in a response
 def count_words(response):
     """Count the number of words in a response string.
 
