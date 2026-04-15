@@ -30,6 +30,7 @@ word_counts = []
 # loops through each csv row you loaded into responses and for each pull out three fields into variable
 
 for row in responses:
+    #access each row and pull out the participant id, role, and response
     participant = row["participant_id"]
     role = row["role"]
     response = row["response"]
