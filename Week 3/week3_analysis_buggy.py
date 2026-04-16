@@ -55,12 +55,12 @@ count = 0
 for row in rows:
     raw = row["experience_years"].strip().lower()
 
-if raw.isdigit():
-    years = int(raw)
-elif raw in NUMBER_WORDS:
-    years = NUMBER_WORDS[raw]
-else:
-    continue
+    if raw.isdigit():
+        years = int(raw)
+    elif raw in NUMBER_WORDS:
+        years = NUMBER_WORDS[raw]
+    else:
+        continue
 
 total_experience += years
 count += 1
