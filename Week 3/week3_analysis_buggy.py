@@ -53,13 +53,17 @@ for role, count in sorted(role_counts.items()):
 total_experience = 0
 count = 0
 for row in rows:
-    raw = row["experience_years"].strip()
-    if raw.isdigit():
-        total_experience += int(raw)
-        count += 1
-    else:
-        # e.g., raw might be "fifteen" or blank → skip it
-        pass
+    raw = row["experience_years"].strip().lower()
+
+if raw.isdigit():
+    years = int(raw)
+elif raw in NUMBER_WORDS:
+    years = NUMBER_WORDS[raw]
+else:
+    continue
+
+total_experience += years
+count += 1
 if count > 0:
     avg_experience = total_experience / count
     print(f"\nAverage years of experience: {avg_experience:.1f}")
