@@ -13,6 +13,11 @@ hcde530/
 │   ├── demo_responses.csv
 │   ├── demo_word_count.py
 │   └── week2.md
+├── Week 3/
+│   ├── clean_responses.py
+│   ├── count_roles.py
+│   ├── responses.csv
+│   └── responses_cleaned.csv
 ├── .cursorrules
 ├── .gitignore
 └── README.md
