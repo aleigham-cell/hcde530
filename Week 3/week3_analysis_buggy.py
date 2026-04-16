@@ -1,5 +1,24 @@
 import csv
 
+from collections import Counter
+
+def tally_primary_tools(rows):
+    """
+    Takes your list of dict rows (from csv.DictReader) and returns a Counter like:
+    Counter({"FIGMA": 10, "JIRA": 6, ...})
+    """
+    counts = Counter()
+
+    for row in rows:
+        tool = row.get("primary_tool", "").strip()
+        if not tool:
+            continue
+
+        tool = tool.title()  # or .upper() if you prefer
+        counts[tool] += 1
+
+    return counts
+
 # Load the survey data from a CSV file
 filename = "week3_survey_messy.csv"
 rows = []
@@ -32,7 +51,11 @@ with open(filename, newline="", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
         rows.append(row)
+tool_counts = tally_primary_tools(rows)
 
+print("\nPrimary tool counts:")
+for tool, c in tool_counts.items():
+    print(f"  {tool}: {c}")
 
 # Count responses by role
 # Normalize role names so "ux researcher" and "UX Researcher" are counted together
