@@ -17,12 +17,12 @@ REVIEWS_PATH = "/reviews"
 PAGE_SIZE = 100
 TIMEOUT_SEC = 60
 
-
+#Function to fetch all reviews from the API
 def fetch_all_reviews() -> list[dict[str, object]]:
     """GET /reviews with pagination until all rows are retrieved."""
     reviews: list[dict[str, object]] = []
     offset = 0
-
+#Loop that continues until all reviews are fetched
     while True:
         query = urlencode({"limit": PAGE_SIZE, "offset": offset})
         url = f"{BASE_URL}{REVIEWS_PATH}?{query}"
