@@ -17,7 +17,19 @@ hcde530/
 │   ├── clean_responses.py
 │   ├── count_roles.py
 │   ├── responses.csv
-│   └── responses_cleaned.csv
+│   ├── responses_cleaned.csv
+│   ├── week3.md
+│   ├── week3_analysis_buggy.py
+│   └── week3_survey_messy.csv
+├── week 4/
+│   ├── A4: API Call + Structured Output/
+│   │   ├── aapl_open_volume_close.csv
+│   │   ├── C4_APIs_and_data_acquisition.md
+│   │   └── fetch_aapl_grouped.py
+│   ├── category_helpful_votes.csv
+│   ├── count_reviews_by_rating.py
+│   ├── fetch_reviews.py
+│   └── review_counts_by_rating.csv
 ├── .cursorrules
 ├── .gitignore
 └── README.md
