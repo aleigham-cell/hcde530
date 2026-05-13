@@ -24,12 +24,18 @@ hcde530/
 ├── week 4/
 │   ├── A4: API Call + Structured Output/
 │   │   ├── aapl_open_volume_close.csv
-│   │   ├── C4_APIs_and_data_acquisition.md
-│   │   └── fetch_aapl_grouped.py
+│   │   ├── fetch_aapl_grouped.py
+│   │   └── week4.md
 │   ├── category_helpful_votes.csv
 │   ├── count_reviews_by_rating.py
 │   ├── fetch_reviews.py
 │   └── review_counts_by_rating.csv
+├── Week 5/
+│   ├── app_info.csv
+│   ├── app_reviews_demo.csv
+│   ├── C5_Data_Analysis_with_Pandas.md
+│   └── reviews_mini.csv
+├── Week 6/
 ├── .cursorrules
 ├── .gitignore
 └── README.md
