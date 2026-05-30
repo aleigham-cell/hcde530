@@ -4,6 +4,18 @@ You are an AI coding assistant working in the `hcde530` course repository.
 <!-- TREE:START -->
 ```
 hcde530/
+├── Mini project 1/
+│   ├── home_values.csv
+│   ├── listings.csv
+│   ├── Metro_median_sale_price_now_uc_sfrcondo_month.csv
+│   ├── mp1.md
+│   ├── sales.csv
+│   ├── Zip_zhvi_bdrmcnt_2_uc_sfrcondo_tier_0.33_0.67_sm_sa_month (1).csv
+│   ├── Zordi_Metro_uc_condo_month.csv
+│   ├── Zori_counties_uc_sfrcondomfr_sm_month.csv
+│   ├── Zori_Metro_uc_sfrcondomfr_sm_month.csv
+│   └── Zori_zip_uc_sfrcondomfr_sm_month.csv
+├── Mini project 2/
 ├── scripts/
 │   └── update_cursorrules_tree.py
 ├── Week 2 Project/
@@ -36,6 +48,18 @@ hcde530/
 │   ├── C5_Data_Analysis_with_Pandas.md
 │   └── reviews_mini.csv
 ├── Week 6/
+│   ├── Week 6 Assignment/
+│   │   ├── Visualization pngs/
+│   │   ├── home_values.csv
+│   │   ├── listings.csv
+│   │   ├── sales.csv
+│   │   ├── week6.md
+│   │   ├── Zordi_Metro_uc_condo_month.csv
+│   │   ├── Zori_counties_uc_sfrcondomfr_sm_month.csv
+│   │   ├── Zori_Metro_uc_sfrcondomfr_sm_month.csv
+│   │   └── Zori_zip_uc_sfrcondomfr_sm_month.csv
+│   ├── bird_strikes.csv
+│   └── clean_ufo_data.csv
 ├── .cursorrules
 ├── .gitignore
 └── README.md
