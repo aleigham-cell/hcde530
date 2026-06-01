@@ -12,7 +12,7 @@ I used **Cursor** (generative coding in plain language) to build a working **Das
 
 **What the tool did well:** Fast scaffolding for Dash layout, Plotly horizontal bars, and callback wiring so I could focus on the survey structure instead of boilerplate.
 
-**What I had to correct or redirect:** Column identification for matrix questions (only columns whose names end with known level labels like ` - Satisfied`), one-hot score mapping for recommend/attend (`RECOMMEND_MAP` / `ATTEND_MAP`), and a **hardcoded local path** to `Survey.xlsx` that I would not ship to a shared host without a compliance-reviewed upload flow. I also debugged a **port 8050 already in use** error when an old Flask reloader was still running—nothing the model flagged on its own.
+**What I had to correct or redirect:** Column identification for matrix questions (only columns whose names end with known level labels like  `- Satisfied`), one-hot score mapping for recommend/attend (`RECOMMEND_MAP` / `ATTEND_MAP`), and a **hardcoded local path** to `Survey.xlsx` that I would not ship to a shared host without a compliance-reviewed upload flow. I also debugged a **port 8050 already in use** error when an old Flask reloader was still running—nothing the model flagged on its own.
 
 **Deployment note:** The app is **usable and demo-ready locally** at `http://127.0.0.1:8050`. It is **not on a public URL** because open-text survey responses may contain PHI/PII; that choice is documented in `readme.md`.
 
@@ -22,12 +22,14 @@ I used **Cursor** (generative coding in plain language) to build a working **Das
 
 I generated charts in **Python with Plotly** (`plotly.graph_objects` in `app.py`) to answer specific questions about coaching-class feedback for a **non-technical operations manager**, not to decorate a spreadsheet.
 
-| Chart | Data | Why this type |
-| ----- | ---- | ------------- |
-| Horizontal **percent** bar | First coaching class (Yes / No) | Two categories with short labels; percentages read clearly left-to-right. |
-| **Star rating** + numeric average | Recommend / attend (1–5 one-hot columns) | Stakeholders expect NPS-style “how many stars,” not a raw distribution table. |
+
+| Chart                               | Data                                      | Why this type                                                                                                 |
+| ----------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Horizontal **percent** bar          | First coaching class (Yes / No)           | Two categories with short labels; percentages read clearly left-to-right.                                     |
+| **Star rating** + numeric average   | Recommend / attend (1–5 one-hot columns)  | Stakeholders expect NPS-style “how many stars,” not a raw distribution table.                                 |
 | **Grouped horizontal** percent bars | Satisfaction and “areas changed” matrices | Many row labels (class dimensions) × five Likert levels; grouping by level keeps comparison within each item. |
-| Horizontal **count** bars | Day of week, time of day, class type | Nominal preferences; counts are easier to scan than percentages when labels are long. |
+| Horizontal **count** bars           | Day of week, time of day, class type      | Nominal preferences; counts are easier to scan than percentages when labels are long.                         |
+
 
 Each section includes **Answered** and **Skipped** counts so the reader can judge sample size the same way they would in SurveyMonkey. The analysis lives in this **GitHub repo** as runnable Python (`app.py` / `survey_data.py`) with `readme.md` explaining what each view is for—not a Jupyter notebook, but the same intent: code, rendered charts, and written reasoning a teammate can follow.
 
