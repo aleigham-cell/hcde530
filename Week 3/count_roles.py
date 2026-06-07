@@ -4,12 +4,14 @@ from pathlib import Path
 
 
 def normalize_role(value: object) -> str:
+    """Return a trimmed, uppercased role string (or empty if missing)."""
     if value is None:
         return ""
     return str(value).strip().upper()
 
 
 def main() -> None:
+    # Load the cleaned CSV (same folder as this script)
     script_dir = Path(__file__).resolve().parent
     input_path = script_dir / "responses_cleaned.csv"
 
@@ -27,11 +29,13 @@ def main() -> None:
         if "role" not in reader.fieldnames:
             raise KeyError("Expected a 'role' column in responses_cleaned.csv.")
 
+        # Loop through each row and tally non-empty roles
         for row in reader:
             role = normalize_role(row.get("role"))
             if role:
                 counts[role] += 1
 
+    # Print role counts in the order they first appeared in the file
     print("Role counts (in file order):")
     print("-" * 30)
     for role, count in counts.items():
