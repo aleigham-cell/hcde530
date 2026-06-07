@@ -85,8 +85,8 @@ for row in rows:
     else:
         continue
 
-total_experience += years
-count += 1
+    total_experience += years
+    count += 1
 if count > 0:
     avg_experience = total_experience / count
     print(f"\nAverage years of experience: {avg_experience:.1f}")
