@@ -47,7 +47,7 @@ I did not treat Cursor’s output or SurveyMonkey’s online totals as ground tr
 
 **Example 3 — Override AI structure:** When generated code lumped everything into one file or assumed simple CSV headers, I **split data logic from UI** and kept the real SurveyMonkey **multi-row header** shape. That override was necessary for correct column keys like `("What did you like most about your class?", "Open-Ended Response")`.
 
-**Confidence I’d state to a stakeholder:** High on **code and Excel alignment** when filters match; medium on **parity with SurveyMonkey’s web UI** without documenting the same date/course scope; low on **public hosting** until compliance approves handling of open-text responses.
+**Confidence I’d state to a stakeholder:** High on **code and Excel alignment** when filters match; medium on **parity with SurveyMonkey’s web UI** without documenting the same date/course scope.
 
 ---
 
@@ -64,7 +64,5 @@ I did not treat Cursor’s output or SurveyMonkey’s online totals as ground tr
 1. **Port conflict** — A previous Dash debug process still held port 8050; I identified the PIDs with `lsof` and restarted cleanly.
 2. **Scope confusion on open-ended volume** — Looked like “missing” comments until I confirmed year/course filters and Excel column keys; documented the behavior rather than changing skip logic to force a match with a mismatched SurveyMonkey screen.
 3. **Local-only data path** — `SURVEY_PATH` points outside the repo so survey data is never committed; next iteration would add an approved upload or API pull after compliance review.
-
-**What I’d do differently next time:** Scope v1 to **one fixed export schema** plus an in-app file picker (instead of a machine-specific absolute path), and add a one-line **“active filter”** reminder above open-ended sections so stakeholders never compare filtered dashboard text to an unfiltered SurveyMonkey report.
 
 **Repo evidence:** `Mini project 2/` — `app.py`, `survey_data.py`, `assets/style.css`, `requirements.txt`, `readme.md`, and this `mp2.md`.
