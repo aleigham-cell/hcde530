@@ -11,7 +11,17 @@ Get more comfortable with **Python basics** and **Git/GitHub**, by working with 
 - **`demo_word_count.py`** — loads a CSV, counts words per row, prints a table and summary stats.
 - **`demo_responses.csv`** — the data the script reads (see below).
 
-Optional: I also keep reflection notes in **`week2.md`** (competency / process), separate from this context.
+## Documentation in this folder
+
+Documentation lives in **two places**, on purpose:
+
+| File | What it documents |
+|------|-------------------|
+| **`demo_word_count.py`** | Section-style comments **in the code** next to each step (load data, count words, loop, preview, summary). |
+| **`week2.md`** | Competency reflection—what I learned about reading and documenting code, with a list that maps to those comments. |
+| **`CONTEXT.md`** (this file) | How to run the project, what the data is, and how the files fit together. |
+
+If you are grading or reviewing Week 2, start with **`week2.md`** for the competency claim, then open **`demo_word_count.py`** to see the comments it describes.
 
 ## About the data (`demo_responses.csv`)
 
