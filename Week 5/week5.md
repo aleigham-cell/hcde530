@@ -4,14 +4,16 @@
 
 Evidence for C5 lives entirely in `**app_reviews_demo_analysis.ipynb**`, working on `**app_reviews_demo.csv**` (500 rows × 10 columns). I used pandas to **load**, **inspect**, **summarize distributions**, **filter** a purposeful subset, **aggregate** across a grouping column, **count missing values**, and I wrote brief notes next to outputs so numbers are interpreted—not just printed.
 
+The questions I was trying to answer: what's in the dataset, how star ratings are distributed, what strong field-research reviews look like, which app has the highest average rating, and which columns have missing values. The steps below are how I answered each one and what I took away from the numbers.
+
 Workflow in that notebook:
 
-1. **Load:** `pd.read_csv('app_reviews_demo.csv')` into `**df**`.
-2. **Structure:** `**print(df.shape)**` plus `**df.head()**` to see columns and sample rows (e.g. `app`, `category`, `rating`, `review`, `helpful_votes`, optional `device_type` / `app_version`). `**df.info()**` to confirm dtypes and `**Non-Null` counts**—this step showed `**device_type**` and `**app_version**` are incomplete before any grouping.
+1. **Load:** `pd.read_csv('app_reviews_demo.csv')` into `**df**`. *Question: what's in the file?* **Answer:** 500 reviews I can work with in one DataFrame.
+2. **Structure:** `**print(df.shape)**` plus `**df.head()**` to see columns and sample rows (e.g. `app`, `category`, `rating`, `review`, `helpful_votes`, optional `device_type` / `app_version`). `**df.info()**` to confirm dtypes and `**Non-Null` counts**—this step showed `**device_type**` and `**app_version**` are incomplete before any grouping. *So what:* I know which columns are safe to use for every row before I group or filter.
 3. **Distribution of the main outcome:** `**rating**` treated as the key sentiment column. `**df['rating'].value_counts().sort_index()**` produced **1→29, 2→43, 3→61, 4→160, 5→207**. I noted in the notebook that **5** is most common, then **4**—i.e. the distribution is **skewed toward high stars**, so “average satisfaction” claims need that bias in mind.
 4. **Filtered subset:** Boolean indexing `**df[(df['category'] == 'field research') & (df['rating'] >= 4)]**` → **58** rows. That answers a concrete question: *among field-research reviews, what do strong (4–5 star) rows look like?*
 5. **Group aggregate:** `**df.groupby('app')['rating'].mean().round(2)**` — **Fieldkit 3.67**, **Lookback 3.90**, **Maze 4.00**, **Miro 4.02**, **Dovetail 4.12**. I frame that as an **ordinal star average**, useful for comparing apps in-table, not as a standalone “truth” metric.
-6. **Missing data:** `**df.isna().sum()**` plus filtering to counts **> 0**: `**device_type**` **63** missing, `**app_version**` **111** missing (with inline comment restating counts).
+6. **Missing data:** `**df.isna().sum()**` plus filtering to counts **> 0**: `**device_type**` **63** missing, `**app_version**` **111** missing (with inline comment restating counts). *So what:* I wouldn't slice by device or app version without a plan for those gaps first.
 
 Across those steps I use **multiple pandas operations**: `**read_csv**`, `**head**` / `**shape**`, `**info**`, `**value_counts**`, conditional row selection, `**groupby` + mean + round**, `**isna` + sum`**, and **`Series `boolean filtering** (`missing_counts[missing_counts > 0]`).
 
